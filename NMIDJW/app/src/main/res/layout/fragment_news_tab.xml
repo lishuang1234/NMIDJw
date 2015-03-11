@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="?colorPrimary"
+              >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="@dimen/news_fagment_tab_height"
+        >
+
+        <TextView
+            style="@style/fragment_news_page_tx_tab"
+            android:id="@+id/fragment_news_school_tx_indicator"
+            android:text="校园新闻"
+            />
+
+        <TextView
+            style="@style/fragment_news_page_tx_tab"
+            android:text="就业信息"
+            android:id="@+id/fragment_news_job_tx_indicator"
+            />
+
+        <TextView
+            style="@style/fragment_news_page_tx_tab"
+            android:text="活动讲座"
+            android:id="@+id/fragment_news_notify_tx_indicator"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:orientation="horizontal"
+       >
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="3dp"
+            android:layout_weight="1"
+            android:src="@drawable/tabhost_mainac_backgroud"
+            android:scaleType="center"
+            android:id="@+id/fragment_news_tab_indicator"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="3dp"
+            android:layout_weight="1"
+            android:visibility="invisible"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="3dp"
+            android:layout_weight="1"
+            android:visibility="invisible"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

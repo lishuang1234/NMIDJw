@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">NMIDJW</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="tab_item_first_page_text">首页</string>
+    <string name="tab_item_news_text">新闻</string>
+    <string name="tab_item_setting_text">设置</string>
+    <string name="first_page_today_class">您今天共有4节课程</string>
+    <string name="first_page_today_adage">一寸光阴一寸金，寸金难买寸光阴</string>
+</resources>

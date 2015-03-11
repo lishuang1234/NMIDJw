@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:CircleImageView="http://schemas.android.com/apk/res-auto"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+    >
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:src="@mipmap/first_page_header_background"
+        android:scaleType="fitXY"
+        android:id="@+id/fragment_setting_iv_header"/>
+
+    <com.ls.view.CircleImageView
+        android:layout_width="84dp"
+        android:layout_height="84dp"
+        CircleImageView:type="circle"
+        CircleImageView:src="@mipmap/header"
+        android:scaleType="fitXY"
+        android:layout_below="@id/fragment_setting_iv_header"
+        android:layout_marginTop="-60dp"
+        android:layout_marginLeft="16dp"
+        />
+
+
+    <android.support.v7.widget.Toolbar
+        android:layout_height="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:background="@android:color/transparent"
+        android:id="@+id/fragment_setting_toolbar"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_below="@id/fragment_setting_iv_header"
+        android:id="@+id/fragment_setting_rl_user_show">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            style="@style/Base.TextAppearance.AppCompat.Headline"
+            android:text="李双"
+            android:layout_marginLeft="16dp"
+            android:textStyle="bold"
+            android:id="@+id/fragment_setting_tx_name"
+            />
+
+        <TextView
+            style="@style/fragment_setting_tx_user_infor"
+            android:text="0191203班"
+            android:id="@+id/fragment_setting_tx_class"
+
+            android:drawableLeft="@mipmap/fragment_setting_iv_class"
+
+            />
+
+        <TextView
+            style="@style/fragment_setting_tx_user_infor"
+            android:layout_alignBottom="@id/fragment_setting_tx_class"
+            android:layout_toRightOf="@id/fragment_setting_tx_class"
+            android:text="通信与信息工程学院"
+            android:id="@+id/fragment_setting_tx_academy"
+            android:drawableLeft="@mipmap/fragment_setting_iv_academy"/>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="#e9e0e0"
+        android:layout_below="@id/fragment_setting_rl_user_show"
+        android:id="@+id/fragment_setting_v_shadow"/>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/fragment_setting_v_shadow">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+
+        >
+
+        <TextView
+            style="@style/fragment_setting_tx_setting"
+            android:text="消息提醒"
+            android:drawableLeft="@mipmap/fragment_setting_iv_alarm"
+
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#e9e0e0"
+            />
+
+        <TextView
+            style="@style/fragment_setting_tx_setting"
+            android:text="信息收藏"
+            android:drawableLeft="@mipmap/fragment_setting_iv_favor"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#e9e0e0"
+
+            />
+
+        <TextView
+            style="@style/fragment_setting_tx_setting"
+            android:text="更新反馈"
+            android:drawableLeft="@mipmap/fragment_setting_iv_feedback"
+
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#e9e0e0"
+
+            />
+
+        <TextView
+            style="@style/fragment_setting_tx_setting"
+            android:text="退出"
+            android:drawableLeft="@mipmap/fragment_setting_iv_exit"
+
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#e9e0e0"
+
+            />
+    </LinearLayout>
+</ScrollView>
+</RelativeLayout>

@@ -1,0 +1,74 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/color_primary_blue</item>
+        <item name="colorPrimaryDark">@color/color_primary_blue_dark</item>
+
+    </style>
+
+    <style name="fragment_first_page_cv_item_parent">
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="fragment_first_page_cv_item_left" parent="fragment_first_page_cv_item_parent">
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:layout_marginRight">3dp</item>
+    </style>
+
+    <style name="fragment_first_page_cv_item_right" parent="fragment_first_page_cv_item_parent">
+        <item name="android:layout_marginRight">5dp</item>
+        <item name="android:layout_marginLeft">3dp</item>
+    </style>
+
+    <style name="fragment_first_page_tx_item">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@android:color/primary_text_light</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginTop">2dp</item>
+
+    </style>
+
+    <style name="fragment_first_page_iv_item">
+        <item name="android:layout_width">45dp</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:scaleType">fitXY</item>
+    </style>
+
+    <style name="fragment_news_page_tx_tab" parent="TextAppearance.AppCompat.Body2">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center|bottom</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textColor">@android:color/primary_text_dark</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingBottom">7dp</item>
+    </style>
+
+    <style name="fragment_setting_tx_setting">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:drawablePadding">16dp</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="fragment_setting_tx_user_infor" parent="@style/Base.TextAppearance.AppCompat.Body1">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:drawablePadding">5dp</item>
+
+    </style>
+
+</resources>
