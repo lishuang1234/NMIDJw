@@ -5,6 +5,8 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewParent;
+import android.widget.ImageView;
 
 import java.util.List;
 
@@ -36,13 +38,18 @@ public class ShowViewPager extends PagerAdapter {
 
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
-        container.addView(mImages.get(position));
-        return mImages.get(position);
+        ImageView view = (ImageView) mImages.get(position);
+        ViewParent parent = view.getParent();
+        if (parent != null) {//删除Item
+            ViewGroup group = (ViewGroup) parent;
+            group.removeView(view);
+        }
+        container.addView(view);
+        return view;
     }
 
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
-        container.removeView(mImages.get(position));
 
     }
 }
