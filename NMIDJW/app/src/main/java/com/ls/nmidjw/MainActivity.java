@@ -1,5 +1,6 @@
 package com.ls.nmidjw;
 
+import android.os.Build;
 import android.support.v4.app.FragmentTabHost;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -8,11 +9,13 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TabHost;
 import android.widget.TextView;
 
-import com.ls.fragment.FirstPageFragement;
+import com.ls.fragment.FirstPageFragment;
 import com.ls.fragment.NewsFragment;
 import com.ls.fragment.SettingFragment;
 
@@ -24,7 +27,7 @@ public class MainActivity extends ActionBarActivity implements TabHost.OnTabChan
     private LayoutInflater layoutInflater;
 
     //定义数组来存放Fragment界面
-    private Class fragmentArray[] = {FirstPageFragement.class, NewsFragment.class,
+    private Class fragmentArray[] = {FirstPageFragment.class, NewsFragment.class,
             SettingFragment.class};
 
     //定义数组来存放按钮图片
@@ -42,6 +45,7 @@ public class MainActivity extends ActionBarActivity implements TabHost.OnTabChan
         setContentView(R.layout.activity_main);
         initTabhost();
         initToolbar();
+        toggleHideyBar();
     }
 
     private void initToolbar() {
@@ -116,5 +120,19 @@ public class MainActivity extends ActionBarActivity implements TabHost.OnTabChan
 
     }
 
+    public void toggleHideyBar() {
 
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            Window window = getWindow();
+            // Translucent status bar
+            window.setFlags(
+                    WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS,
+                    WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            // Translucent navigation bar
+            window.setFlags(
+                    WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION,
+                    WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+        }
+    }
 }
