@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -20,13 +21,14 @@ import java.util.List;
 /**
  * Created by ls on 15-3-7.
  */
-public class NewsShowFragment extends Fragment {
+public class NewsShowFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
     private View rootView;
     private RecyclerView mRecyclerView;
     private Activity mActivity;
     private int fragmentID;
     private Toolbar mToolbar;
     private OnHideToolbarListener mListener;
+    private SwipeRefreshLayout refreshLayout;
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
@@ -39,33 +41,20 @@ public class NewsShowFragment extends Fragment {
         if (parent != null) {
             parent.removeView(rootView);
         }
-        //test();
+
 
         mRecyclerView = (RecyclerView) rootView.findViewById(R.id.fragment_news_show_rv);
+        refreshLayout = (SwipeRefreshLayout) rootView.findViewById(R.id.fragment_news_show_sl);
 
         initRecyclerView();
-
+        initRefreshLayout();
         return rootView;
 
     }
 
-    private void test() {
-        switch (fragmentID) {
-            case 0:
-                rootView.setBackgroundColor(getResources().getColor(R.color
-                        .color_primary_blue_dark));
-                break;
-            case 1:
-                rootView.setBackgroundColor(getResources().getColor(android.R.color.black));
-                break;
-
-            case 2:
-                rootView.setBackgroundColor(getResources().getColor(android.R.color
-                        .holo_orange_light));
-                break;
-
-        }
-
+    private void initRefreshLayout() {
+        refreshLayout.setColorSchemeResources(R.color.orange, R.color.blue, R.color.green);
+        refreshLayout.setOnRefreshListener(this);
     }
 
 
@@ -90,21 +79,18 @@ public class NewsShowFragment extends Fragment {
         mRecyclerView.setOnScrollListener(new RecyclerViewOnScrollListener(mActivity) {
             @Override
             protected void onShow() {
-                if (mListener!=null)
-                    mListener.onShow();
+                if (mListener != null) mListener.onShow();
 
             }
 
             @Override
             protected void onHide() {
-                if (mListener!=null)
-                    mListener.onHide();
+                if (mListener != null) mListener.onHide();
             }
 
             @Override
             protected void onMove(int offset) {
-                if (mListener!=null)
-                    mListener.onMove(offset);
+                if (mListener != null) mListener.onMove(offset);
 
             }
         });
@@ -117,6 +103,16 @@ public class NewsShowFragment extends Fragment {
             list.add("NEWSSHOW  " + fragmentID + "   " + i);
         }
         return list;
+    }
+
+    /**
+     * 下拉刷新
+     */
+    @Override
+    public void onRefresh() {
+
+        //refreshLayout.setRefreshing(false);
+
     }
 
     /**
